@@ -6,5 +6,4 @@ public class MainClass {
 		System.out.println("TP1_GRUPO_2");
 		System.out.println("prueba juani");
 	}
-
 }

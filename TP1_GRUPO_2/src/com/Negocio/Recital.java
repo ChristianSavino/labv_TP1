@@ -13,5 +13,6 @@ public class Recital extends Evento {
 		genero = new Genero();
 		genero.setNombre("Pop");
 	}
+
 }
 
