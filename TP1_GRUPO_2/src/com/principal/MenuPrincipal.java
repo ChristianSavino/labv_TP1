@@ -24,7 +24,7 @@ public class MenuPrincipal implements Menu {
 				if (scanner.hasNext())
 					if(scanner.hasNextInt()) {
 						numero = scanner.nextInt();
-						scanner.close();
+						scanner = null;
 					}
 					else {
 						scanner.nextLine();
@@ -32,14 +32,13 @@ public class MenuPrincipal implements Menu {
 						System.out.println("INGRESE OPCION:");					
 					}
 			}	
-			scanner = null;
 			switch (numero) {
 			case 1:
-				MainClass.listarEventos.CargarMenu();
-				break;
-			case 2:
 				System.out.println("Test " + numero);
 				CargarMenu();
+				break;
+			case 2:				
+				MainClass.listarEventos.CargarMenu();
 				break;
 			case 3:
 				System.out.println("Test " + numero);

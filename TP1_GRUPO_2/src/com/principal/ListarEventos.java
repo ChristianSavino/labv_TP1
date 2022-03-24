@@ -17,21 +17,20 @@ public class ListarEventos  implements Menu  {
 			
 			String menu = "";
 			Scanner scanner = new Scanner(System.in);
-			while(menu != "S")
+			while(menu.compareTo("S") != 0)
 			{
-				if (scanner.hasNext())
-					if(scanner.hasNext()) {
+					if(scanner.hasNextLine()) {
 						menu = scanner.nextLine();
-						if(menu == "S")
-							scanner.close();
-					}
-					else {
-						scanner.nextLine();
-						Menu.Alertar("INGRESE SOLAMENTE 'S'");
-						System.out.println("DESEAR VOLVER AL MENU PRINCIPAL? (S para SI)");					
+						if(menu.compareTo("S") == 0)
+							scanner = null;
+						else {
+							scanner.nextLine();
+							Menu.Alertar("INGRESE SOLAMENTE 'S'");
+							System.out.println("DESEAR VOLVER AL MENU PRINCIPAL? (S para SI)");					
+						}
 					}
 			}
-			
+			scanner = null;
 			MainClass.menuPrincipal.CargarMenu();
 						
 		} 
