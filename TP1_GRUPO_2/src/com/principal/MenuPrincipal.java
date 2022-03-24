@@ -27,9 +27,9 @@ public class MenuPrincipal implements Menu {
 			while(salir.compareTo("S") != 0)
 			{
 					if(scanner.hasNextLine())
-						if(salir.compareTo("S") == 0)
-							scanner = null;
+						salir = scanner.nextLine().toUpperCase();
 			}
+			scanner.close();
 			scanner = null;
 			System.exit(0);
 		}
