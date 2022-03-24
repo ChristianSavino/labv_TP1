@@ -2,16 +2,20 @@ package com.Negocio;
 import com.Entidades.*;
 
 public class Teatro  extends Evento {
-	
-	private Genero genero;
-	
-	public Teatro() {
-		nombre = "Silvio Soldan se pone a cantar";
+
+	private TipoTeatro tipoTeatro;
+
+	public Teatro(String nombreEvento, String fechaEvento, String localidadEvento, TipoTeatro.tiposTeatro tipo) {
+		Constructor(nombreEvento,fechaEvento,localidadEvento);
+		
+		tipoTeatro = new TipoTeatro();
+		tipoTeatro.setTipo(tipo);
+		float precioEntrada = tipoTeatro.getValorEntrada();
+				
 		entrada = new Entrada[1];
-		entrada[0] = new Entrada("ENTRADA_TEATRO",1350f);
-		genero = new Genero();
-		genero.setNombre("Drama");
+		entrada[0] = new Entrada("General", precioEntrada);
 	}
+	
 	
 	@Override
 	protected void Constructor(String nombreEvento, String fechaEvento, String localidadEvento) {
