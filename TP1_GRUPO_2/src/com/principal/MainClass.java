@@ -7,13 +7,13 @@ public class MainClass {
 	public static ListarEventos listarEventos;
 	
 	public static void main(String[] args){	
-		
+		IniciarClases();
 		menuPrincipal.CargarMenu();
 			while (true) {
 		}
 	}
 	
-	void IniciarClases() {
+	static void IniciarClases() {
 		menuPrincipal = new MenuPrincipal();
 		listarEventos = new ListarEventos();
 	}
