@@ -12,4 +12,11 @@ public class Teatro  extends Evento {
 		genero = new Genero();
 		genero.setNombre("Drama");
 	}
+	
+	@Override
+	protected void Constructor(String nombreEvento, String fechaEvento, String localidadEvento) {
+		nombre = nombreEvento;
+		fecha = fechaEvento;
+		localidad = localidadEvento;
+	}
 }

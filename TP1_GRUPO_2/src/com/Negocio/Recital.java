@@ -16,6 +16,13 @@ public class Recital extends Evento {
 		genero = new Genero();
 		genero.setNombre("Pop");
 	}
+	
+	@Override
+	protected void Constructor(String nombreEvento, String fechaEvento, String localidadEvento) {
+		nombre = nombreEvento;
+		fecha = fechaEvento;
+		localidad = localidadEvento;
+	}
 
 }
 

@@ -1,8 +1,10 @@
 package com.Entidades;
 
-public class Evento {
+public abstract class Evento {
 	protected String nombre;
 	protected Entrada[] entrada;
+	protected String fecha;
+	protected String localidad;
 		
 	public String getNombre() {
 		return nombre;
@@ -16,4 +18,6 @@ public class Evento {
 	public void setEntrada(Entrada[] entrada) {
 		this.entrada = entrada;
 	}
+	
+	protected abstract void Constructor(String nombreEvento,String fechaEvento, String localidadEvento);
 }
