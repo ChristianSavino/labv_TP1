@@ -7,7 +7,7 @@ public class Deporte extends Evento {
 	private TipoDeporte tipoDeporte;
 
 	public Deporte(String nombreEvento, String fechaEvento, String localidadEvento ,boolean internacional,TipoDeporte.tiposDeporte tipo) {
-		Constructor(nombreEvento,fechaEvento,fechaEvento);
+		Constructor(nombreEvento,fechaEvento,localidadEvento);
 		
 		esInternacional = internacional;
 		
@@ -33,6 +33,24 @@ public class Deporte extends Evento {
 		nombre = nombreEvento;
 		fecha = fechaEvento;
 		localidad = localidadEvento;
+	}
+	
+	@Override
+	public String toString() {
+		try {
+			String cadena = "";
+			cadena = "NOMBRE DEL EVENTO: " + nombre + "\n";
+			cadena += "FECHA EVENTO: " + fecha + " | LOCALIDAD: " + localidad + "\n";
+			cadena += "TIPO: " + tipoDeporte.toString() + " | INTERNACIONAL?: " + (esInternacional ? "SI" : "NO") + "\n";
+			cadena += entrada.length > 1 ? "ENTRADAS:" : "ENTRADA:" + "\n";
+			for (Entrada ent:entrada) {
+				cadena += ent.toString() + "\n";					
+			}
+			return cadena;
+		}
+		catch (Exception e) {
+			return "Error al generar ToString";
+		}
 	}
 	
 	

@@ -19,4 +19,21 @@ public class Teatro  extends Evento {
 		fecha = fechaEvento;
 		localidad = localidadEvento;
 	}
+	
+	@Override
+	public String toString() {
+		try {
+			String cadena = "";
+			cadena = "NOMBRE DEL EVENTO: " + nombre + "\n";
+			cadena += "FECHA EVENTO: " + fecha + " | LOCALIDAD: " + localidad + "\n";
+			cadena += entrada.length > 1 ? "ENTRADAS:" : "ENTRADA:" + "\n";
+			for (Entrada ent:entrada) {
+				cadena += ent.toString() + "\n";					
+			}
+			return cadena;
+		}
+		catch (Exception e) {
+			return "Error al generar ToString";
+		}
+	}
 }

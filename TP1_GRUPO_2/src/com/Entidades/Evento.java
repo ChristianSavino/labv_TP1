@@ -20,4 +20,6 @@ public abstract class Evento {
 	}
 	
 	protected abstract void Constructor(String nombreEvento,String fechaEvento, String localidadEvento);
+	
+	public abstract String toString();
 }

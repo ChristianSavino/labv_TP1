@@ -34,4 +34,11 @@ public class TipoDeporte {
 		}	
 		return 0f;
 	}
+
+	@Override
+	public String toString() {
+		return tipo.toString();
+	}
+	
+	
 }
