@@ -6,24 +6,24 @@ public class Recital extends Evento {
 	public static float precioVip = 1500f;
 	public static float precioNormal = 800f;
 	
-	private Genero genero;
+	private TipoMusica genero;
 
-	public Recital(String nombreEvento, String fechaEvento, String localidadEvento, String generoEvento) {
-		Constructor(nombreEvento,fechaEvento,localidadEvento);
+	public Recital(String nombreEvento, String fechaEvento, Integer duracionEvento,  TipoMusica.tipoMusica tipo) {
+		Constructor(nombreEvento,fechaEvento,duracionEvento);
 		
 		entrada = new Entrada[2];
 		entrada[0] = new Entrada("VIP",precioVip);
 		entrada[1] = new Entrada("NORMAL",precioNormal);
 		
-		genero = new Genero();
-		genero.setNombre(generoEvento);
+		genero = new TipoMusica();
+		genero.setTipo(tipo);;
 	}
 	
 	@Override
-	protected void Constructor(String nombreEvento, String fechaEvento, String localidadEvento) {
+	protected void Constructor(String nombreEvento, String fechaEvento, Integer duracionEvento) {
 		nombre = nombreEvento;
 		fecha = fechaEvento;
-		localidad = localidadEvento;
+		duracion = duracionEvento;
 	}
 	
 	@Override
@@ -31,7 +31,7 @@ public class Recital extends Evento {
 		try {
 			String cadena = "";
 			cadena = "NOMBRE DEL EVENTO: " + nombre + "\n";
-			cadena += "FECHA EVENTO: " + fecha + " | LOCALIDAD: " + localidad + "\n";
+			cadena += "FECHA EVENTO: " + fecha + " | DURACION: " + duracion + " Minutos \n";
 			cadena += "GENERO: " + genero.toString()+ "\n";
 			cadena += entrada.length > 1 ? "ENTRADAS:" : "ENTRADA:" + "\n";
 			for (Entrada ent:entrada) {

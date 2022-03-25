@@ -3,11 +3,20 @@ package com.Entidades;
 public class Entrada {
 	protected Float precio;
 	protected String nombre;
+	protected Evento evento;
+	protected Integer numero;
 	
-	public Entrada(String n,Float p)
-	{
+	public Entrada(String n,Float p) {
 		nombre = n;
 		precio = p;
+	}
+	
+	public Integer getNumero() {
+		return numero;
+	}
+
+	public void setNumero(Integer numero) {
+		this.numero = numero;
 	}
 	
 	public Float getPrecio() {
@@ -22,10 +31,21 @@ public class Entrada {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
+	
+	public Evento getEvento() {
+		return evento;
+	}
+
+	public void setEvento(Evento evento) {
+		this.evento = evento;
+	}
 
 	@Override
 	public String toString() {
-		return "TIPO: " + nombre + "PRECIO: $" + precio;
+		String cadena = "";
+		cadena = "ENTRADA NRO." + numero + "\n";
+		cadena += evento.toString();
+		return cadena;
 	}
 	
 	

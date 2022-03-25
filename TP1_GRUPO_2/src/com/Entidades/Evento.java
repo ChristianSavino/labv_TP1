@@ -4,8 +4,20 @@ public abstract class Evento {
 	protected String nombre;
 	protected Entrada[] entrada;
 	protected String fecha;
-	protected String localidad;
+	protected Integer duracion;
 		
+	public String getFecha() {
+		return fecha;
+	}
+	public void setFecha(String fecha) {
+		this.fecha = fecha;
+	}
+	public Integer getDuracion() {
+		return duracion;
+	}
+	public void setDuracion(Integer duracion) {
+		this.duracion = duracion;
+	}
 	public String getNombre() {
 		return nombre;
 	}
@@ -19,7 +31,7 @@ public abstract class Evento {
 		this.entrada = entrada;
 	}
 	
-	protected abstract void Constructor(String nombreEvento,String fechaEvento, String localidadEvento);
+	protected abstract void Constructor(String nombreEvento,String fechaEvento, Integer duracionEvento);
 	
 	public abstract String toString();
 }

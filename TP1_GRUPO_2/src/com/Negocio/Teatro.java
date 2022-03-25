@@ -5,8 +5,8 @@ public class Teatro  extends Evento {
 
 	private TipoTeatro tipoTeatro;
 
-	public Teatro(String nombreEvento, String fechaEvento, String localidadEvento, TipoTeatro.tiposTeatro tipo) {
-		Constructor(nombreEvento,fechaEvento,localidadEvento);
+	public Teatro(String nombreEvento, String fechaEvento, Integer duracionEvento, TipoTeatro.tiposTeatro tipo) {
+		Constructor(nombreEvento,fechaEvento,duracionEvento);
 		
 		tipoTeatro = new TipoTeatro();
 		tipoTeatro.setTipo(tipo);
@@ -18,10 +18,10 @@ public class Teatro  extends Evento {
 	
 	
 	@Override
-	protected void Constructor(String nombreEvento, String fechaEvento, String localidadEvento) {
+	protected void Constructor(String nombreEvento, String fechaEvento, Integer duracionEvento) {
 		nombre = nombreEvento;
 		fecha = fechaEvento;
-		localidad = localidadEvento;
+		duracion = duracionEvento;
 	}
 	
 	@Override
@@ -29,7 +29,7 @@ public class Teatro  extends Evento {
 		try {
 			String cadena = "";
 			cadena = "NOMBRE DEL EVENTO: " + nombre + "\n";
-			cadena += "FECHA EVENTO: " + fecha + " | LOCALIDAD: " + localidad + "\n";
+			cadena += "FECHA EVENTO: " + fecha + " | DURACION: " + duracion + " Minutos \n";
 			cadena += entrada.length > 1 ? "ENTRADAS:" : "ENTRADA:" + "\n";
 			for (Entrada ent:entrada) {
 				cadena += ent.toString() + "\n";					

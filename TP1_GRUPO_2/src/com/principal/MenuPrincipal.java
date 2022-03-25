@@ -1,11 +1,22 @@
 package com.principal;
 import java.util.Scanner;
+import com.Entidades.*;
 import com.interfaces.*;
-import javax.swing.JOptionPane;
 
 
 public class MenuPrincipal implements Menu {
 	
+	
+	private Entrada entradas[];
+	
+	public Entrada[] getEntradas() {
+		return entradas;
+	}
+
+	public void setEntradas(Entrada[] entradas) {
+		this.entradas = entradas;
+	}
+
 	public void CargarMenu(){
 		Menu.MostrarLeyenda();
 		
@@ -14,9 +25,18 @@ public class MenuPrincipal implements Menu {
 
 		Accion();
 	}
+	 
+	void ImprimirEntradas() {
+		for (int i = 0; i < entradas.length;i++) {
+			System.out.println(entradas[i].toString());
+		}
+	}
 	
 	public void Accion() {
 		try {
+			
+			ImprimirEntradas();
+			
 			System.out.println("------------------------------------");
 			
 			Scanner scanner = new Scanner (System.in);		

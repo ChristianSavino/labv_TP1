@@ -6,8 +6,8 @@ public class Deporte extends Evento {
 	private boolean esInternacional;
 	private TipoDeporte tipoDeporte;
 
-	public Deporte(String nombreEvento, String fechaEvento, String localidadEvento ,boolean internacional,TipoDeporte.tiposDeporte tipo) {
-		Constructor(nombreEvento,fechaEvento,localidadEvento);
+	public Deporte(String nombreEvento, String fechaEvento, Integer duracionEvento ,boolean internacional,TipoDeporte.tiposDeporte tipo) {
+		Constructor(nombreEvento,fechaEvento,duracionEvento);
 		
 		esInternacional = internacional;
 		
@@ -29,10 +29,10 @@ public class Deporte extends Evento {
 	}
 
 	@Override
-	protected void Constructor(String nombreEvento, String fechaEvento, String localidadEvento) {
+	protected void Constructor(String nombreEvento, String fechaEvento, Integer duracionEvento) {
 		nombre = nombreEvento;
 		fecha = fechaEvento;
-		localidad = localidadEvento;
+		duracion = duracionEvento;
 	}
 	
 	@Override
@@ -40,12 +40,8 @@ public class Deporte extends Evento {
 		try {
 			String cadena = "";
 			cadena = "NOMBRE DEL EVENTO: " + nombre + "\n";
-			cadena += "FECHA EVENTO: " + fecha + " | LOCALIDAD: " + localidad + "\n";
-			cadena += "TIPO: " + tipoDeporte.toString() + " | INTERNACIONAL?: " + (esInternacional ? "SI" : "NO") + "\n";
-			cadena += entrada.length > 1 ? "ENTRADAS:" : "ENTRADA:" + "\n";
-			for (Entrada ent:entrada) {
-				cadena += ent.toString() + "\n";					
-			}
+			cadena += "FECHA EVENTO: " + fecha + " | DURACION: " + duracion + " Minutos \n";
+			cadena += "TIPO: DEPORTE(" + tipoDeporte.toString() + ") | INTERNACIONAL?: " + (esInternacional ? "SI" : "NO") + "\n";
 			return cadena;
 		}
 		catch (Exception e) {

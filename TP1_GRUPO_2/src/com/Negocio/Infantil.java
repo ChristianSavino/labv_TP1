@@ -13,10 +13,10 @@ public class Infantil extends Evento {
 		}
 	
 	@Override
-	protected void Constructor(String nombreEvento, String fechaEvento, String localidadEvento) {
+	protected void Constructor(String nombreEvento, String fechaEvento, Integer duracionEvento) {
 		nombre = nombreEvento;
 		fecha = fechaEvento;
-		localidad = localidadEvento;
+		duracion = duracionEvento;
 	}
 	
 	@Override
@@ -24,7 +24,7 @@ public class Infantil extends Evento {
 		try {
 			String cadena = "";
 			cadena = "NOMBRE DEL EVENTO: " + nombre + "\n";
-			cadena += "FECHA EVENTO: " + fecha + " | LOCALIDAD: " + localidad + "\n";
+			cadena += "FECHA EVENTO: " + fecha + " | DURACION: " + duracion + " Minutos \n";
 			cadena += entrada.length > 1 ? "ENTRADAS:" : "ENTRADA:" + "\n";
 			for (Entrada ent:entrada) {
 				cadena += ent.toString() + "\n";					
