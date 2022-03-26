@@ -47,10 +47,11 @@ public class MenuPrincipal implements Menu {
 			while(salir.compareTo("S") != 0)
 			{
 					if(scanner.hasNextLine())
-						salir = scanner.nextLine().toUpperCase();
+						salir = scanner.nextLine().toUpperCase();					
 			}
 			scanner.close();
 			scanner = null;
+			System.out.println("AH SALIDO DEL SISTEMA");
 			System.exit(0);
 		}
 		catch(Exception e) {						
