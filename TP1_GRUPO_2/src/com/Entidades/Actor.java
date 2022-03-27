@@ -2,6 +2,7 @@ package com.Entidades;
 
 public class Actor {
 	protected String nombre;
+	protected String apellido;
 	
 	public String getNombre() {
 		return nombre;
@@ -11,9 +12,17 @@ public class Actor {
 		this.nombre = nombre;
 	}
 
+	public String getApellido() {
+		return apellido;
+	}
+	
+	public void setApellido(String apellido) {
+		this.apellido = apellido;
+	}
+	
 	@Override
 	public String toString() {
-		return "";
+		return "NOMBRE: " + nombre + " APELLIDO: " + apellido;
 	}
 	
 }
