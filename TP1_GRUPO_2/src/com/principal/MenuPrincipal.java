@@ -51,7 +51,7 @@ public class MenuPrincipal implements Menu {
 			}
 			scanner.close();
 			scanner = null;
-			System.out.println("AH SALIDO DEL SISTEMA");
+			System.out.println("HA SALIDO DEL SISTEMA");
 			System.exit(0);
 		}
 		catch(Exception e) {						
