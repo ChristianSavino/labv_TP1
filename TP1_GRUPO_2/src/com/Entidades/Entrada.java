@@ -43,11 +43,9 @@ public class Entrada {
 	@Override
 	public String toString() {
 		String cadena = "";
-		cadena = "ENTRADA NRO." + numero + "\n";
+		cadena = "ENTRADA NRO. " + numero + " - " +(nombre.length() > 1 ? nombre:"") + "\nPRECIO: $" + precio + "\n" ;
 		cadena += evento.toString();
 		return cadena;
-	}
-	
-	
+	}	
 }
 

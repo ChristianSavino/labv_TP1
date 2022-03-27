@@ -1,4 +1,7 @@
 package com.Negocio;
+import java.util.ArrayList;
+import java.util.List;
+
 import com.Entidades.*;
 
 public class Recital extends Evento {
@@ -7,8 +10,9 @@ public class Recital extends Evento {
 	public static float precioNormal = 800f;
 	
 	private TipoMusica genero;
+	List<Banda> bandas;
 
-	public Recital(String nombreEvento, String fechaEvento, Integer duracionEvento,  TipoMusica.tipoMusica tipo) {
+	public Recital(String nombreEvento, String fechaEvento, Integer duracionEvento,  TipoMusica.tipoMusica tipo,String nombreBandaPrincipal, String nombreBandaSoporte1, String nombreBandaSoporte2) {
 		Constructor(nombreEvento,fechaEvento,duracionEvento);
 		
 		entrada = new Entrada[2];
@@ -17,6 +21,22 @@ public class Recital extends Evento {
 		
 		genero = new TipoMusica();
 		genero.setTipo(tipo);;
+		
+		bandas = new ArrayList<Banda>();
+		Banda banda = new Banda(nombreBandaPrincipal, true);
+		bandas.add(banda);
+		if (nombreBandaSoporte1.length() > 1)
+		{
+			banda = new Banda(nombreBandaSoporte1, false);
+			bandas.add(banda);
+		}
+		if (nombreBandaSoporte2.length() > 1)
+		{
+			banda = new Banda(nombreBandaSoporte2, false);
+			bandas.add(banda);
+		}
+
+		
 	}
 	
 	@Override
@@ -32,11 +52,9 @@ public class Recital extends Evento {
 			String cadena = "";
 			cadena = "NOMBRE DEL EVENTO: " + nombre + "\n";
 			cadena += "FECHA EVENTO: " + fecha + " | DURACION: " + duracion + " Minutos \n";
-			cadena += "GENERO: " + genero.toString()+ "\n";
-			cadena += entrada.length > 1 ? "ENTRADAS:" : "ENTRADA:" + "\n";
-			for (Entrada ent:entrada) {
-				cadena += ent.toString() + "\n";					
-			}
+			cadena += "TIPO: RECITAL(" + genero.toString()+ ") \n";
+			cadena += (bandas.size() > 1 ? "BANDAS: " : "BANDA:") + " \n";
+			for (Banda banda: bandas) cadena += "- " + banda.toString() + " \n";
 			return cadena;
 		}
 		catch (Exception e) {

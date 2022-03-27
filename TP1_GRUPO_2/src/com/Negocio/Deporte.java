@@ -41,7 +41,7 @@ public class Deporte extends Evento {
 			String cadena = "";
 			cadena = "NOMBRE DEL EVENTO: " + nombre + "\n";
 			cadena += "FECHA EVENTO: " + fecha + " | DURACION: " + duracion + " Minutos \n";
-			cadena += "TIPO: DEPORTE(" + tipoDeporte.toString() + ") | INTERNACIONAL?: " + (esInternacional ? "SI" : "NO") + "\n";
+			cadena += "TIPO: DEPORTE(" + tipoDeporte.toString() + ") | INTERNACIONAL?: " + (esInternacional ? "INTERNACIONAL" : "NACIONAL") + "\n";
 			return cadena;
 		}
 		catch (Exception e) {

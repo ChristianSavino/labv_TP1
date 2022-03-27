@@ -1,4 +1,5 @@
 package com.principal;
+import java.util.List;
 import java.util.Scanner;
 import com.Entidades.*;
 import com.interfaces.*;
@@ -6,14 +7,13 @@ import com.interfaces.*;
 
 public class MenuPrincipal implements Menu {
 	
+	private List<Entrada> entradas;
 	
-	private Entrada entradas[];
-	
-	public Entrada[] getEntradas() {
+	public List<Entrada> getEntradas() {
 		return entradas;
 	}
 
-	public void setEntradas(Entrada[] entradas) {
+	public void setEntradas(List<Entrada> entradas) {
 		this.entradas = entradas;
 	}
 
@@ -27,9 +27,7 @@ public class MenuPrincipal implements Menu {
 	}
 	 
 	void ImprimirEntradas() {
-		for (int i = 0; i < entradas.length;i++) {
-			System.out.println(entradas[i].toString());
-		}
+		for (Entrada entrada: entradas) System.out.println(entrada.toString() + " \n---------\n");
 	}
 	
 	public void Accion() {
