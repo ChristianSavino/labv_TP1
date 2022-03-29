@@ -3,6 +3,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.Entidades.*;
+import com.Tipos.TipoMusica;
 
 public class Recital extends Evento {
 	
@@ -12,15 +13,14 @@ public class Recital extends Evento {
 	private TipoMusica genero;
 	List<Banda> bandas;
 
-	public Recital(String nombreEvento, String fechaEvento, Integer duracionEvento,  TipoMusica.tipoMusica tipo,String nombreBandaPrincipal, String nombreBandaSoporte1, String nombreBandaSoporte2) {
+	public Recital(String nombreEvento, String fechaEvento, Integer duracionEvento,  TipoMusica tipo,String nombreBandaPrincipal, String nombreBandaSoporte1, String nombreBandaSoporte2) {
 		Constructor(nombreEvento,fechaEvento,duracionEvento);
 		
 		entrada = new Entrada[2];
 		entrada[0] = new Entrada("VIP",precioVip);
 		entrada[1] = new Entrada("NORMAL",precioNormal);
 		
-		genero = new TipoMusica();
-		genero.setTipo(tipo);;
+		genero = tipo;
 		
 		bandas = new ArrayList<Banda>();
 		Banda banda = new Banda(nombreBandaPrincipal, true);
@@ -52,7 +52,7 @@ public class Recital extends Evento {
 			String cadena = "";
 			cadena = "NOMBRE DEL EVENTO: " + nombre + "\n";
 			cadena += "FECHA EVENTO: " + fecha + " | DURACION: " + duracion + " Minutos \n";
-			cadena += "TIPO: RECITAL(" + genero.toString()+ ") \n";
+			cadena += "TIPO: RECITAL(" + genero.name()+ ") \n";
 			cadena += (bandas.size() > 1 ? "BANDAS: " : "BANDA:") + " \n";
 			for (Banda banda: bandas) cadena += "- " + banda.toString() + " \n";
 			return cadena;
