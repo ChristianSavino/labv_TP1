@@ -6,7 +6,6 @@ import com.Negocio.*;
 
 public class MainClass {
 	
-	public static final String os = System.getProperty("os.name");
 	private static Evento eventos[];
 	
 	public static void main(String[] args){
